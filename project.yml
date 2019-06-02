@@ -1,0 +1,25 @@
+## Usage Notes
+# Use a folder named Sources with swift files  - include a main.swift file
+# brew install xcodegen
+# update swift-tensorflow-RELEASE-0.3.1.xctoolchain to your latest toolchain
+# Remember to set the File > Project Settings > Build setting > New Build System ->  Legacy 
+# This config targets swift 4.2 / June 2019 
+name: SwiftTensorflow
+options:
+  bundleIdPrefix: com.swiftTensorflow
+
+targets:
+  SwiftTensorflow:
+    type: tool
+    platform: macOS
+    deploymentTarget: "10.14"
+    sources: 
+        - Sources
+    dependencies:
+      - framework: /Library/Developer/Toolchains/swift-tensorflow-RELEASE-0.3.1.xctoolchain/usr/lib/swift/macosx/libtensorflow_framework.so
+      - framework: /Library/Developer/Toolchains/swift-tensorflow-RELEASE-0.3.1.xctoolchain/usr/lib/swift/macosx//libtensorflow.so
+
+    settings:
+      SWIFT_OPTIMIZATION_LEVEL: -O
+      LD_RUNPATH_SEARCH_PATHS: /Library/Developer/Toolchains/swift-tensorflow-RELEASE-0.3.1.xctoolchain/usr/lib/swift/macosx/
+      SWIFT_VERSION: "4.2"
