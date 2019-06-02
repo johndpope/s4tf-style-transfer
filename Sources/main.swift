@@ -4,20 +4,19 @@ import Python
 import Foundation
 
 
-// WARNING - if you get a crash - check which python - it maybe under miniconda3 or miniconda3!
-// N.B. - this branch is using miniconda3 not virtualenv see
-// https://github.com/johndpope/SwiftReinforce readme
-let  path = "/Users/\(NSUserName())/miniconda3/envs/gymai2/lib/python2.7/site-packages/"
+// conda create -n swift-tensorflow python==3.7
+// conda activate swift-tensorflow
+// conda install jupyter numpy matplotlib
 
 // IMPORTANT - if you're using a different environment name
-// Schema > Run > Pre-actions - source activate gymai2
+// Schema > Run > Pre-actions - source activate swift-tensorflow
 let environmentName = "swift-tensorflow"
 
 
 let sys = Python.import("sys")
 print("INFO: macOS sysPath:", sys.path)
-let  path2 = "/Users/johndpope/miniconda3/envs/\(environmentName)/lib/python3.6/site-packages/"
-sys.path.insert(0,path2)
+let  path = "/Users/johndpope/miniconda3/envs/\(environmentName)/lib/python3.7/site-packages/"
+sys.path.insert(0,path)
 
 let np = Python.import("numpy")
 let display = Python.import("IPython.display")
