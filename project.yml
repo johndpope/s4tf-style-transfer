@@ -4,12 +4,12 @@
 # update swift-tensorflow-RELEASE-0.3.1.xctoolchain to your latest toolchain
 # Remember to set the File > Project Settings > Build setting > New Build System ->  Legacy 
 # This config targets swift 4.2 / June 2019 
-name: SwiftTensorflow
+name: StyleTransfer
 options:
-  bundleIdPrefix: com.swiftTensorflow
+  bundleIdPrefix: com.StyleTransfer
 
 targets:
-  SwiftTensorflow:
+  StyleTransfer:
     type: tool
     platform: macOS
     deploymentTarget: "10.14"
@@ -23,3 +23,5 @@ targets:
       SWIFT_OPTIMIZATION_LEVEL: -O
       LD_RUNPATH_SEARCH_PATHS: /Library/Developer/Toolchains/swift-tensorflow-RELEASE-0.3.1.xctoolchain/usr/lib/swift/macosx/
       SWIFT_VERSION: "4.2"
+      SWIFT_FORCE_DYNAMIC_LINK_STDLIB: YES
+      SWIFT_FORCE_STATIC_LINK_STDLIB: NO

@@ -420,7 +420,7 @@ var styleWeights = [Float(1e3 / Float(pow(64.0 , 2.0))),
 var contentWeights:[Float] = [1.0, 1.0]
 
 var result = styleTransfer(styleImagePath: "./vangogh_starry_night.jpg",
-                           contentImagePath: "./painted_ladies.jpg", 
+                           contentImagePath: "./painted_ladies.jpg",
                            imageSize: 512,
                            styleWeights: styleWeights,
                            contentWeights: contentWeights)

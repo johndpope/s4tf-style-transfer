@@ -23,7 +23,7 @@ func loadParameters<Scalar: FloatingPoint>(for tensorName: String) -> Tensor<Sca
     let suffix = "/.ATTRIBUTES/VARIABLE_VALUE"
     let fullTensorName = StringTensor(["\(tensorName)\(suffix)"])
 
-    return Raw.restoreV2(prefix: StringTensor("./vgg-19.ckpt"), 
+    return Raw.restoreV2(prefix: StringTensor("../vgg19/vgg-19.ckpt"),
               tensorNames: fullTensorName, 
               shapeAndSlices: StringTensor([""]), 
               dtypes: [Float.tensorFlowDataType])[0] as! Tensor<Scalar>
