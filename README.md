@@ -5,6 +5,8 @@ https://github.com/regrettable-username/style-transfer
 
 Download / extract vgg19 folder https://github.com/regrettable-username/style-transfer/releases/download/v0.1/vgg19.tar.gz into project folder    
 
+Use miniconda (as opposed to anaconda) - https://docs.conda.io/en/latest/miniconda.html      
+
 N.B. conda environment must be set to 3.7 to align with S4TF
 ```shell
 conda create -n swift-tensorflow python==3.7
